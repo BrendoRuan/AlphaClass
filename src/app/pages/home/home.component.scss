@@ -1,0 +1,59 @@
+/* Corpo principal da página */
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Gradiente radial azul escuro do centro para as bordas */
+  background: radial-gradient(circle at center, #1e3a8a 0%, #0f172a 100%);
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Seção com o conteúdo */
+.corpo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 3rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+/* Título principal */
+.titulo h1 {
+  font-size: 2rem;
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Botões */
+.botao {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.botao button {
+  background-color: #2563eb;
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem 1.5rem;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botao button:hover {
+  background-color: #1d4ed8;
+  transform: scale(1.05);
+}
+
+.botao h2 {
+  margin: 0;
+}
