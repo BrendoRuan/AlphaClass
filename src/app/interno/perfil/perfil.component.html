@@ -1,1 +1,36 @@
 <p>perfil works!</p>
+
+<section class="perfil-section">
+  <div class="perfil-card">
+    <h2>Gerência de Perfil</h2>
+
+    <form [formGroup]="perfilForm" (ngSubmit)="salvarPerfil()">
+      <label>Nome:</label>
+      <input formControlName="nome" />
+      <div *ngIf="enviado && perfilForm.get('nome')?.invalid" class="error">Nome é obrigatório.</div>
+
+      <label>E-mail:</label>
+      <input formControlName="email" />
+      <div *ngIf="enviado && perfilForm.get('email')?.invalid" class="error">E-mail inválido.</div>
+
+      <label>Telefone:</label>
+      <input formControlName="telefone" />
+      <div *ngIf="enviado && perfilForm.get('telefone')?.invalid" class="error">Telefone inválido (10 a 11 dígitos).</div>
+
+      <label>Senha atual:</label>
+      <input type="password" formControlName="senhaAtual" />
+
+      <label>Nova senha:</label>
+      <input type="password" formControlName="novaSenha" />
+
+      <label>Confirmar nova senha:</label>
+      <input type="password" formControlName="confirmaSenha" />
+      <div *ngIf="enviado && senhaInvalida" class="error">As senhas não conferem.</div>
+
+      <div *ngIf="mensagemSucesso" class="success">{{ mensagemSucesso }}</div>
+      <div *ngIf="mensagemErro" class="error">{{ mensagemErro }}</div>
+
+      <button type="submit" class="btn">Salvar alterações</button>
+    </form>
+  </div>
+</section>

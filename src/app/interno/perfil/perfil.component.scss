@@ -1,0 +1,74 @@
+.perfil-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, #0052d4, #4364f7, #6fb1fc);
+  padding: 20px;
+}
+
+.perfil-card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  max-width: 600px;
+  width: 100%;
+  padding: 40px 50px;
+  color: #333;
+}
+
+h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  color: #004aad;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+  font-size: 1rem;
+}
+
+input {
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  width: 100%;
+}
+
+input:focus {
+  border-color: #004aad;
+  outline: none;
+}
+
+.error {
+  color: red;
+  margin-top: -15px;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.btn {
+  background-color: #004aad;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 14px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.btn:hover {
+  background-color: #002f6c;
+  transform: scale(1.05);
+}

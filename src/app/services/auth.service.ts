@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { authState } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-import { Auth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, signOut, User } from 'firebase/auth';
+import { Auth, createUserWithEmailAndPassword, EmailAuthProvider, GoogleAuthProvider, reauthenticateWithCredential, signInWithEmailAndPassword, signInWithPopup, signOut, updateEmail, updatePassword, User } from 'firebase/auth';
 import { doc, Firestore, getDoc, setDoc } from 'firebase/firestore';
 import { Observable } from 'rxjs';
 
@@ -89,5 +89,50 @@ export class AuthService {
 
   logout() {
     return signOut(this.auth);
+  }
+
+   // NOVO MÉTODO PARA ATUALIZAR O PERFIL DO USUÁRIO
+  async atualizarPerfil(dados: {
+    nome: string;
+    email: string;
+    telefone: string;
+    senhaAtual?: string;
+    novaSenha?: string;
+  }): Promise<void> {
+    const user = this.auth.currentUser;
+
+    if (!user) throw new Error('Usuário não autenticado.');
+
+    const uid = user.uid;
+    const userDocRef = doc(this.firestore, 'usuario', uid);
+
+    // Se for alterar email ou senha, pode ser necessária reautenticação
+    if ((dados.email && dados.email !== user.email) || dados.novaSenha) {
+      if (!dados.senhaAtual) {
+        throw new Error('Para alterar email ou senha, a senha atual é necessária.');
+      }
+
+      // Reautenticação
+      const credential = EmailAuthProvider.credential(user.email!, dados.senhaAtual);
+      await reauthenticateWithCredential(user, credential);
+    }
+
+    // Atualiza o documento do usuário no Firestore
+    await setDoc(userDocRef, {
+      nome: dados.nome,
+      email: dados.email,
+      telefone: dados.telefone,
+      updatedAt: new Date()
+    }, { merge: true });
+
+    // Atualiza o e-mail no Auth, se ele tiver sido alterado
+    if (user.email !== dados.email) {
+      await updateEmail(user, dados.email);
+    }
+
+    // Atualiza a senha se nova senha foi fornecida e válida
+    if (dados.novaSenha && dados.novaSenha.trim().length >= 6) {
+      await updatePassword(user, dados.novaSenha);
+    }
   }
 }
