@@ -1,0 +1,122 @@
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  background: radial-gradient(circle at center, #cde3ff 0%, #004aad 100%);
+}
+
+.home-box {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  padding: 50px;
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  color: #004aad;
+}
+
+.conteudo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  text-align: left;
+}
+
+.botoes {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .btn {
+  background-color: #004aad;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  width: 100%;
+
+    &:hover {
+      background-color: #002f6c;
+      transform: scale(1.05);
+    }
+
+    &.disabled {
+      background-color: #cccccc;
+      pointer-events: none;
+    }
+  }
+}
+
+.destaques-empilhados {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  .destaque-card {
+    background-color: #f4faff;
+    padding: 30px;
+    border-radius: 12px;
+
+    h2 {
+      color: #004aad;
+      margin-bottom: 20px;
+    }
+
+    .livro-card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+
+      .livro-header {
+        background-color: #004aad;
+        color: white;
+        font-weight: bold;
+        padding: 10px 20px;
+        font-size: 1.2rem;
+      }
+
+      .livro-body {
+        text-align: center;
+        padding: 20px;
+
+        img {
+          max-width: 150px;
+          height: auto;
+          border-radius: 8px;
+        }
+      }
+
+      .livro-footer {
+        padding: 10px 20px;
+        background-color: #f0f4ff;
+
+        .resumo {
+          margin: 0;
+          font-size: 0.95rem;
+          color: #333;
+        }
+
+        .autor {
+          margin-top: 8px;
+          font-weight: bold;
+          color: #004aad;
+        }
+      }
+    }
+  }
+}

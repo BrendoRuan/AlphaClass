@@ -1,0 +1,18 @@
+<section class="livros-page">
+  <h2>📚 Livros</h2>
+  
+  <div class="livros-grid">
+    <div class="livro-card" *ngFor="let livro of livros">
+      <div class="card-header">
+        <h3>{{ livro.titulo }}</h3>
+      </div>
+      <div class="card-body">
+        <img [src]="livro.capa" alt="Capa do livro {{livro.titulo}}" />
+      </div>
+      <div class="card-footer">
+        <p class="resumo">{{ livro.resumo }}</p>
+        <p class="autor">Autor: {{ livro.autor }}</p>
+      </div>
+    </div>
+  </div>
+</section>

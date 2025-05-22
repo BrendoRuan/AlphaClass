@@ -1,0 +1,50 @@
+<div class="home-container">
+  <div class="home-box">
+    <h1 class="title">AlphaClass</h1>
+
+    <div class="conteudo">
+      <!-- Botões do lado esquerdo -->
+      <nav class="botoes">
+        <button (click)="gotoPerfil()" class="btn">Perfil</button>
+        <button (click)="gotoLivros()" class="btn">Livros</button>
+        <button class="btn disabled">Estatísticas <br> (em Breve)</button>
+      </nav>
+
+      <!-- Destaques do lado direito -->
+      <div class="destaques-empilhados">
+        <div class="destaque-card">
+          <h2>Mais Recentes</h2>
+          <div class="livro-card">
+            <div class="livro-header">O Segredo das Estrelas</div>
+            <div class="livro-body">
+              <img src="/AlphaClass/src/asserts/img/quando-nossos-caminhos-se-cruzaram-capa.png" alt="Capa do Livro">
+            </div>
+            <div class="livro-footer">
+              <p class="resumo">
+                Uma jornada épica por mundos esquecidos e segredos cósmicos...
+              </p>
+              <p class="autor">Autor: João Silva</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="destaque-card">
+          <h2>Mais Lidos</h2>
+          <div class="livro-card">
+            <div class="livro-header">A Última Fronteira</div>
+            <div class="livro-body">
+              <img src="https://via.placeholder.com/150x200" alt="Capa do Livro">
+            </div>
+            <div class="livro-footer">
+              <p class="resumo">
+                Em um futuro onde tudo é possível, a coragem é a única arma...
+              </p>
+              <p class="autor">Autor: Maria Costa</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

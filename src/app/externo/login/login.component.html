@@ -1,0 +1,43 @@
+<section class="login-section">
+  <div class="login-card">
+    
+    <!-- Lado esquerdo com imagem -->
+    <div class="login-image">
+      <img src="assets/img/login.png" alt="Login Image">
+    </div>
+
+    <!-- Formulário -->
+    <div class="login-form">
+      <h3>Login</h3>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+        <div>
+          <label for="usuario">Usuário</label>
+          <input id="usuario" type="text" formControlName="usuario" placeholder="Digite seu usuário" />
+          <div *ngIf="usuario?.touched && usuario?.invalid" style="color: red; font-size: 0.9rem;">
+            Usuário é obrigatório.
+          </div>
+        </div>
+
+        <div>
+          <label for="senha">Senha</label>
+          <input id="senha" type="password" formControlName="senha" placeholder="Digite sua senha" />
+          <div *ngIf="senha?.touched && senha?.invalid" style="color: red; font-size: 0.9rem;">
+            <div *ngIf="senha?.errors?.['required']">Senha é obrigatória.</div>
+            <div *ngIf="senha?.errors?.['minlength']">A senha deve ter pelo menos 6 caracteres.</div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn">Entrar</button>
+
+        <div class="link-cadastro">
+          <p>Não tem uma conta? <a routerLink="/cadastro">Cadastre-se</a></p>
+        </div>
+
+        <button type="button" (click)="loginGoogle()" class="btn" style="margin-top: 15px; background-color: #DB4437;">
+          Entrar com Google
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
