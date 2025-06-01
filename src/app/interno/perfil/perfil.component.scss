@@ -1,0 +1,216 @@
+.perfil-container {
+  min-height: 100vh;
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  color: #004aad;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.perfil-container h2 {
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+section {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 25px 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #004aad;
+  padding-bottom: 8px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  max-height: 250px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9faff;
+}
+
+ul li {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: #002f6c;
+}
+
+ul li:last-child {
+  border-bottom: none;
+}
+
+ul li strong {
+  flex: 1;
+}
+
+ul li button {
+  margin-left: 10px;
+  background-color: #004aad;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+ul li button:hover {
+  background-color: #002f6c;
+  transform: scale(1.05);
+}
+
+form {
+  background: #f4faff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: inset 0 0 8px #cce0ff;
+}
+
+form h4 {
+  margin-bottom: 15px;
+  color: #004aad;
+}
+
+form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #003366;
+}
+
+form input,
+form textarea {
+  margin-top: 6px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1.5px solid #004aad;
+  transition: border-color 0.3s ease;
+  font-family: inherit;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #002f6c;
+  background-color: #e6f0ff;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+form input[type="checkbox"] {
+  width: auto;
+  margin-top: 10px;
+}
+
+form button {
+  background-color: #004aad;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 12px 26px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-right: 15px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #002f6c;
+  transform: scale(1.05);
+}
+
+form button[type="button"] {
+  background-color: #ccc;
+  color: #333;
+}
+
+form button[type="button"]:hover {
+  background-color: #aaa;
+  transform: none;
+}
+
+.btn {
+  display: block;
+  margin: 0 auto;
+  background-color: #004aad;
+  color: white;
+  font-weight: 700;
+  font-size: 1.3rem;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #002f6c;
+  transform: scale(1.05);
+}
+
+/* Scrollbar estilizado para as listas */
+ul::-webkit-scrollbar {
+  width: 8px;
+}
+
+ul::-webkit-scrollbar-thumb {
+  background-color: #004aad;
+  border-radius: 10px;
+}
+
+ul::-webkit-scrollbar-track {
+  background-color: #e6f0ff;
+}
+
+/* Responsividade simples */
+@media (max-width: 600px) {
+  .perfil-container {
+    padding: 20px 15px;
+  }
+
+  ul li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  ul li button {
+    margin: 5px 0 0 0;
+  }
+
+  form label {
+    font-size: 0.9rem;
+  }
+
+  form button {
+    width: 100%;
+    margin: 10px 0 0 0;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

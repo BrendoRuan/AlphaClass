@@ -1,0 +1,33 @@
+<section class="livros-page">
+  <h2>📚 Todos os Livros Cadastrados</h2>
+
+  <div *ngIf="livros.length === 0" class="sem-livros">
+    Nenhum livro cadastrado ainda.
+  </div>
+
+  <div class="livros-grid" *ngIf="livros.length > 0">
+    <div class="livro-card" *ngFor="let livro of livros">
+      <div class="card-header">
+        <h3>{{ livro.titulo }}</h3>
+      </div>
+
+      <div class="card-body">
+        <img
+          [src]="livro.capa"
+          alt="Capa do livro {{ livro.titulo }}"
+          onerror="this.src='assets/capas/default.jpg'"
+        />
+      </div>
+
+      <div class="card-footer">
+        <p class="resumo">{{ livro.resumo }}</p>
+        <p class="autor">Autor: {{ livro.autor }}</p>
+        <p class="categoria">Categoria: {{ livro.categoria }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="btn-voltarhome">
+    <button class="btn-voltar" (click)="gotoVoltarhome()">Voltar</button>
+  </div>
+</section>

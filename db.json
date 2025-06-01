@@ -1,0 +1,80 @@
+{
+  "usuarios": [
+    {
+      "nome": "Ruan",
+      "email": "ruan@email.com",
+      "telefone": "11999999999",
+      "rua": "rua do ceu",
+      "bairro": "guabiraba",
+      "senha": "1234567",
+      "id": "1"
+    },
+    {
+      "nome": "Suênia",
+      "email": "suellen@email.com",
+      "telefone": "11888888888",
+      "id": "2"
+    },
+    {
+      "nome": "Brendo Ruan Nascimento De Oliveira",
+      "email": "rhuanoliveira001@gmail.com",
+      "telefone": "81983221920",
+      "rua": "rua d",
+      "bairro": "recife",
+      "senha": "151515",
+      "id": "3c1b"
+    },
+    {
+      "id": "dd74",
+      "nome": "marcos",
+      "telefone": "81993523594",
+      "rua": "rua t",
+      "bairro": "bola na rede",
+      "email": "marcos@gmail.com",
+      "password": "122334",
+      "senha": "122334"
+    }
+  ],
+  "livros": [
+    {
+      "id": 1,
+      "titulo": "O Segredo das Estrelas",
+      "autor": "João Silva",
+      "resumo": "Uma jornada épica por mundos esquecidos e segredos cósmicos...",
+      "capa": "/assets/img/segredo-das-estrelas.png",
+      "maisLido": false,
+      "dataPublicacao": "2025-05-25",
+      "categoria": "Ficção"
+    },
+    {
+      "id": 2,
+      "titulo": "A Última Fronteira",
+      "autor": "Maria Costa",
+      "resumo": "Em um futuro onde tudo é possível, a coragem é a única arma...",
+      "capa": "/assets/img/ultima-fronteira.png",
+      "maisLido": true,
+      "dataPublicacao": "2025-04-10",
+      "categoria": "Ficção Científica"
+    },
+    {
+      "id": 3,
+      "titulo": "Além da Tempestade",
+      "autor": "Carlos Nunes",
+      "resumo": "Um romance entre as ruínas de uma cidade submersa.",
+      "capa": "/assets/img/alem-da-tempestade.png",
+      "maisLido": true,
+      "dataPublicacao": "2025-05-28",
+      "categoria": "Romance"
+    },
+    {
+      "id": 4,
+      "titulo": "Quando Nossos Caminhos se Cruzaram",
+      "autor": "Brendo",
+      "resumo": "Uma história emocionante de encontros e destino.",
+      "capa": "/assets/img/quando-nossos-caminhos.png",
+      "maisLido": false,
+      "dataPublicacao": "2025-05-30",
+      "categoria": "Drama"
+    }
+  ]
+}

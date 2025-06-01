@@ -1,0 +1,146 @@
+/* Fundo gradiente da tela */
+.login-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, #0052d4, #4364f7, #6fb1fc);
+  padding: 20px;
+}
+
+/* Container principal do login */
+.login-card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  display: flex;
+  max-width: 900px;
+  width: 100%;
+  overflow: hidden;
+  color: #333;
+}
+
+/* Lado esquerdo com imagem */
+.login-image {
+  flex: 1;
+  background: #e6e9f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.login-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Formulário do login */
+.login-form {
+  flex: 1;
+  padding: 40px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-form h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  color: #004aad;
+}
+
+/* Labels e inputs */
+.login-form label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+  font-size: 1rem;
+}
+
+.login-form input {
+  padding: 12px 15px;
+  margin-bottom: 25px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+.login-form input:focus {
+  border-color: #004aad;
+  outline: none;
+}
+
+/* Botões padrão */
+.btn {
+  background-color: #004aad;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 14px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  width: 20%;
+}
+
+.btn:hover {
+  background-color: #002f6c;
+  transform: scale(1.05);
+}
+
+.btn-cadastro {
+  background-color:#004aad;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 14px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  width: 20%;
+}
+
+.btn-cadastro:hover {
+  background-color:brown;
+  transform: scale(1.05);
+}
+/* Link para cadastro */
+.link-cadastro {
+  margin-top: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.link-cadastro a {
+  color: #004aad;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.link-cadastro a:hover {
+  color: #002f6c;
+}
+
+/* Responsivo para dispositivos menores */
+@media (max-width: 768px) {
+  .login-card {
+    flex-direction: column;
+  }
+
+  .login-image {
+    height: 200px;
+  }
+
+  .login-form {
+    padding: 30px;
+  }
+}

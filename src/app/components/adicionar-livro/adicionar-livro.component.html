@@ -1,0 +1,40 @@
+<div class="add-livro-container">
+  <h2 class="form-title">Adicionar Novo Livro</h2>
+  <form [formGroup]="livroForm" (ngSubmit)="salvarLivro()" class="form-box">
+    <div class="form-group">
+      <label for="titulo">Título:</label>
+      <input id="titulo" formControlName="titulo" required />
+    </div>
+
+    <div class="form-group">
+      <label for="autor">Autor:</label>
+      <input id="autor" formControlName="autor" required />
+    </div>
+
+    <div class="form-group">
+      <label for="resumo">Resumo:</label>
+      <textarea id="resumo" formControlName="resumo" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="capa">URL da Capa:</label>
+      <input id="capa" formControlName="capa" required />
+    </div>
+
+    <div class="form-group">
+      <label for="categoria">Categoria:</label>
+      <input id="categoria" formControlName="categoria" required />
+    </div>
+
+    <div class="form-group">
+      <label for="dataPublicacao">Data de Publicação:</label>
+      <input id="dataPublicacao" type="date" formControlName="dataPublicacao" required />
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" [disabled]="livroForm.invalid" class="btn">Salvar</button>
+      <button type="button" (click)="cancelar()" class="btn cancelar">Cancelar</button>
+      <button type="button" (click)="gotoVoltarHome()" class="btn cancelar">Voltar</button>
+    </div>
+  </form>
+</div>

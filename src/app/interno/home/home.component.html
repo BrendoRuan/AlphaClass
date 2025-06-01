@@ -1,0 +1,55 @@
+<div class="home-container">
+  <div class="home-box">
+    <h1 class="title">AlphaClass</h1>
+
+    <div class="conteudo">
+      <!-- Botões do lado esquerdo -->
+      <nav class="botoes">
+        <button (click)="gotoPerfil()" class="btn">Painel Admin</button>
+        <button (click)="gotoLivros()" class="btn">Livros</button>
+        <button (click)="gotoadicionarLivro()" class="btn">
+          + Adicionar Livro
+        </button>
+        <button (click)="gotobuscar()" class="btn">Buscar por Categoria</button>
+        <button (click)="gotoCadastro()" class="btn">Cadastro</button>
+      </nav>
+
+      <!-- Destaques do lado direito -->
+      <div class="destaques-empilhados">
+        <!-- Botão de adicionar livro -->
+
+        <div class="destaque-card">
+          <h2>Mais Recentes</h2>
+          <div class="livro-lista">
+            <div class="livro-card" *ngFor="let livro of livrosRecentes">
+              <div class="livro-header">{{ livro.titulo }}</div>
+              <div class="livro-body">
+                <img [src]="livro.capa" alt="Capa do Livro" />
+              </div>
+              <div class="livro-footer">
+                <p class="resumo">{{ livro.resumo }}</p>
+                <p class="autor">Autor: {{ livro.autor }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="destaque-card">
+          <h2>Populares</h2>
+          <div class="livro-lista">
+            <div class="livro-card" *ngFor="let livro of livrosMaisLidos">
+              <div class="livro-header">{{ livro.titulo }}</div>
+              <div class="livro-body">
+                <img [src]="livro.capa" alt="Capa do Livro" />
+              </div>
+              <div class="livro-footer">
+                <p class="resumo">{{ livro.resumo }}</p>
+                <p class="autor">Autor: {{ livro.autor }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

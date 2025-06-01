@@ -1,0 +1,91 @@
+<div class="body">
+    <div class="perfil-container">
+  <h2>Gerenciamento de Perfil</h2>
+
+  <!-- USUÁRIOS -->
+  <section>
+    <h3>Usuários</h3>
+    <ul>
+      <li *ngFor="let usuario of usuarios">
+        <strong>{{ usuario.nome }}</strong> - {{ usuario.email }} - {{ usuario.telefone }}
+        <button (click)="editarUsuario(usuario)">Editar</button>
+        <button (click)="deletarUsuario(usuario)">Deletar</button>
+      </li>
+    </ul>
+
+    <div *ngIf="usuarioSelecionado">
+      <h4>Editando Usuário</h4>
+      <form [formGroup]="usuarioForm" (ngSubmit)="salvarEdicaoUsuario()">
+        <label>Nome:
+          <input formControlName="nome" />
+        </label>
+        <label>Email:
+          <input formControlName="email" />
+        </label>
+        <label>Telefone:
+          <input formControlName="telefone" />
+        </label>
+        <label>Rua:
+          <input formControlName="rua" />
+        </label>
+        <label>Bairro:
+          <input formControlName="bairro" />
+        </label>
+        <label>Senha:
+          <input formControlName="senha" type="password" />
+        </label>
+
+        <button type="submit">Salvar</button>
+        <button type="button" (click)="cancelarEdicaoUsuario()">Cancelar</button>
+      </form>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- LIVROS -->
+  <section>
+    <h3>Livros</h3>
+    <ul>
+      <li *ngFor="let livro of livros">
+        <strong>{{ livro.titulo }}</strong> - {{ livro.autor }}
+        <button (click)="editarLivro(livro)">Editar</button>
+        <button (click)="deletarLivro(livro)">Deletar</button>
+      </li>
+    </ul>
+
+    <div *ngIf="livroSelecionado">
+      <h4>Editando Livro</h4>
+      <form [formGroup]="livroForm" (ngSubmit)="salvarEdicaoLivro()">
+        <label>Título:
+          <input formControlName="titulo" />
+        </label>
+        <label>Autor:
+          <input formControlName="autor" />
+        </label>
+        <label>Resumo:
+          <textarea formControlName="resumo"></textarea>
+        </label>
+        <label>Capa (URL):
+          <input formControlName="capa" />
+        </label>
+        <label>Categoria:
+          <input formControlName="categoria" />
+        </label>
+        <label>Mais Lido:
+          <input type="checkbox" formControlName="maisLido" />
+        </label>
+        <label>Data de Publicação:
+          <input type="date" formControlName="dataPublicacao" />
+        </label>
+
+        <button type="submit">Salvar</button>
+        <button type="button" (click)="cancelarEdicaoLivro()">Cancelar</button>
+      </form>
+    </div>
+  </section>
+
+  <br />
+  <button (click)="gotoVoltarHome()" class="btn">Voltar para Home</button>
+</div>
+</div>

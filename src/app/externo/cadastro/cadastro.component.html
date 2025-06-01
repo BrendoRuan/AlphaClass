@@ -1,0 +1,33 @@
+<section class="cadastro-section">
+  <div class="cadastro-card">
+    <h2>Cadastro de Usuário</h2>
+
+    <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+      <input formControlName="nome" type="text" placeholder="Nome" />
+
+      <input formControlName="telefone" type="text" placeholder="Telefone" />
+
+      <input formControlName="rua" type="text" placeholder="Rua" />
+
+      <input formControlName="bairro" type="text" placeholder="Bairro" />
+
+      <input formControlName="email" type="email" placeholder="Email" />
+      <div *ngIf="cadastroForm.get('email')?.touched && cadastroForm.get('email')?.invalid">
+        Email inválido ou obrigatório.
+      </div>
+
+      <input formControlName="password" type="password" placeholder="Senha (mínimo 6 caracteres)" />
+      <div *ngIf="cadastroForm.get('password')?.touched && cadastroForm.get('password')?.invalid">
+        Senha obrigatória com no mínimo 6 caracteres.
+      </div>
+
+      <button type="submit" [disabled]="cadastroForm.invalid">
+        Cadastrar
+      </button>
+
+      <div *ngIf="errorMsg">
+        {{ errorMsg }}
+      </div>
+    </form>
+  </div>
+</section>
